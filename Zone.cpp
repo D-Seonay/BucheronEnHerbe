@@ -1,8 +1,9 @@
-#include "Zone.hpp"
-#include "Arbre.hpp"
-#include "Inventaire.hpp" // ajout de l'en-tête Inventaire.hpp
+#include "zone.hpp"
+#include "tree.hpp"
+#include "inventory.hpp" // ajout de l'en-tête Inventaire.hpp
 
 #include <iostream>
+using namespace std;
 
 Zone::Zone(int niveau, int xpNecessaire, int nbBuches, int prixBuche)
         : m_niveau(niveau), m_xpNecessaire(xpNecessaire), m_nbBuches(nbBuches), m_prixBuche(prixBuche)
@@ -35,9 +36,9 @@ Arbre Zone::getArbre(int i) const {
 }
 
 void Zone::afficher() const {
-    std::cout << "La zone contient " << m_arbres.size() << " arbres : " << std::endl;
+    cout << "La zone contient " << m_arbres.size() << " arbres : " << endl;
     for (int i = 0; i < m_arbres.size(); i++) {
-        std::cout << "Arbre " << i+1 << " : ";
+        cout << "Arbre " << i+1 << " : ";
         m_arbres[i].afficher();
     }
 }
